@@ -14,7 +14,7 @@ In this guide, we will cover how to install and configure GitLab on an Ubuntu 22
 Before we install GitLab, it is essential to install some of the software that it leverages during installation and on an ongoing basis. Fortunately, all the required software can be easily installed from Ubuntu’s default package repositories.
 ```bash
 sudo apt update
-sudo apt install ca-certificates 
+sudo apt install ca-certificates curl postfix
 ```
 
 ### Step 2: Installing GitLab
