@@ -32,7 +32,7 @@ sudo apt install gitlab-ce
 ### Step 3: Performing Initial Config through Web Interface
 Logging in for the first time. Visit the  IP address of your GitLab server in your web browser:
 
-http://192.xxx.xx.134
+http://xxx.xxx.xxx.xxx
 
 On your first time visiting, you should see an initial prompt to set a password for the administrative account. If not follow the below steps.
 
