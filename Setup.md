@@ -11,7 +11,14 @@ In this guide, we will cover how to install and configure GitLab on an Ubuntu 22
 - DNS – (We are using gitlab.owndomain.com or server IP)
 
 ### Step 1: Installing the Dependencies and Package
-Before we install GitLab, it is essential to install some of the software that it leverages during installation and on an ongoing basis. Fortunately, all the required software can be easily installed from Ubuntu’s default package repositories.
+Before we install GitLab, it is essential to install some of the software that it leverages during installation and on an ongoing basis. 
+
+Set HostName
+```
+sudo hostnamectl set-hostname GitLabs
+bash
+```
+Fortunately, all the required software can be easily installed from Ubuntu’s default package repositories.
 ```bash
 sudo apt update
 sudo apt install ca-certificates curl postfix
