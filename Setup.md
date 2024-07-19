@@ -28,6 +28,10 @@ sudo bash script.deb.sh
 ```
 sudo apt install gitlab-ce
 ```
+Reconfigure
+```
+sudo gitlab-ctl reconfigure
+```
 
 ### Step 3: Performing Initial Config through Web Interface
 Logging in for the first time. Visit the  IP address of your GitLab server in your web browser:
