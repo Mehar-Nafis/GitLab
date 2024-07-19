@@ -23,7 +23,7 @@ Leverage the installation script to configure your system with the GitLab reposi
 curl -LO https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh
 ```
 ```
-sudo bash /script.deb.sh
+sudo bash script.deb.sh
 ```
 ```
 sudo apt install gitlab-ce
