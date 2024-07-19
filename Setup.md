@@ -1,0 +1,76 @@
+# Configuring Your Own GitLab Instance
+
+## GitLab Introduction:
+
+GitLab CE, or Community Edition, is an open-source application primarily used to host Git repositories, with additional development-related features like issue tracking. It is designed to be hosted using your own infrastructure. It provides flexibility in deploying as an internal repository store for your development team, a free way to interface with users, or a means for contributors to host their own projects.
+
+The GitLab ([https://gitlab.com/](https://gitlab.com/)) project makes it relatively straightforward to set up a GitLab instance on your own hardware with a secure installation mechanism. In this guide, we will cover how to install and configure GitLab on an Ubuntu 22.04 server.
+
+### Pre-Requisites
+- Ubuntu 22.04 Server
+- 8 GB RAM Min or Max
+- Processor 2 cores
+- Storage – 10 GB
+- DNS – (We are using gitlab.owndomain.com or server IP)
+
+### Step 1: Installing the Dependencies and Package
+
+Before we install GitLab, it is essential to install some of the software that it leverages during installation and on an ongoing basis. Fortunately, all the required software can be easily installed from Ubuntu’s default package repositories.
+
+```bash
+sudo apt update
+sudo apt install ca-certificates curl OpenSSH-server postfix
+```
+
+
+### Step 2: Installing GitLab
+This is a straightforward process that leverages an installation script to configure your system with the GitLab repositories. 
+
+```
+curl -LO https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh
+```
+```
+sudo bash /script.deb.sh
+```
+```
+sudo apt install gitlab-ce
+```
+
+### Step 5: Performing Initial Config through Web Interface
+Logging in for the first time. Visit the  IP address of your GitLab server in your web browser:
+
+http://192.xxx.xx.134
+
+On your first time visiting, you should see an initial prompt to set a password for the administrative account. If not follow the below steps.
+### Step 6: Open a Rails Console
+
+Use the following command to open a Rails console:
+```
+sudo gitlab-rails console
+```
+Find the Root User:
+```
+user = User.where(id: 1).first
+```
+Reset the Password:
+```
+user.password = 'your_new_password'
+```
+```
+user.password_confirmation = 'your_new_password'
+```
+```
+user.save!
+```
+Replace 'your_new_password' with your desired password.
+
+Exit the Rails Console:
+```
+exit
+```
+Restart GitLab (optional but recommended):
+
+Restart GitLab to ensure all services are refreshed:
+```
+sudo gitlab-ctl restart
+```
